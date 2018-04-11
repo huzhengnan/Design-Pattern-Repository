@@ -1,20 +1,16 @@
 package gr.uom.java.pattern.gui;
 
-import java.sql.Array;
+import gr.uom.java.pattern.PatternInstance;
+
+import javax.swing.*;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Iterator;
 import java.util.Vector;
-
-import javax.swing.JInternalFrame;
-import javax.swing.JScrollPane;
-import javax.swing.JTree;
-import javax.swing.tree.DefaultMutableTreeNode;
-import javax.swing.tree.DefaultTreeModel;
-
-import gr.uom.java.pattern.PatternInstance;
 
 public class MatrixInternalFrame extends JInternalFrame {
     //private DefaultTableModel model;
@@ -44,7 +40,7 @@ public class MatrixInternalFrame extends JInternalFrame {
     	int patternInstanceID = 0;
     	PreparedStatement insertStatement;
     	Class.forName("com.mysql.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/dprs_fact_repository","root","");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/dprs_fact_repository","root","root");
     	PreparedStatement getStatement1 = con.prepareStatement("select * from design_pattern where Name = ?");
     	getStatement1.setString(1, patternName);
     	ResultSet result1 = getStatement1.executeQuery();

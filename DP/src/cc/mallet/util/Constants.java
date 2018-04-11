@@ -4,7 +4,7 @@ public class Constants {
 	//for localhost
 	public static String dbConnectionString="jdbc:mysql://localhost:3306/dprs_fact_repository";
 	public static String uname="root";
-	public static String passwd="";
+	public static String passwd="root";
 	
 	
 	//for online hosted mysql db
